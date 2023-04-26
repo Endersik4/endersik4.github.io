@@ -1,4 +1,3 @@
-# endersik4.github.io
 # MyWebsite
 My first own website, which I made to better present my portfolio with descriptions.<br/>
 In 2021 I had to do a final project (website) as an assignment in my computer science school.<br/> 
