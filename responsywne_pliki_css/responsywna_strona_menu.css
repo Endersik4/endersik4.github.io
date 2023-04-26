@@ -1,0 +1,34 @@
+/*==========RESPONSYWNA_STRONA_MENU.css to plik css zawierający responsywne dane które są na WSZYSTKICH stronach (np. stopka)	*/
+@media screen and (min-width:1920px)
+{
+	.wybor_menu{font-size:40px;}
+}
+@media screen and (max-width: 1370px) 
+{
+		.wybor_menu {margin-right: 50px;}
+}
+@media screen and (max-width: 1080px) 
+{
+		.wybor_menu {font-size: 20px; margin-right: 50px;}
+}
+@media screen and (max-width: 920px) 
+{
+		.wybor_menu {float:none; margin-top: 20px; margin-right:0;}
+		ul {float:right;}
+		#menu_s {top:-170px;  position:relative; }
+		#menu_c {top:-90px; position:relative;}
+		#menu_g {top:-10px; position:relative; }
+		#menu_k {top:70px; position:relative;}
+		#menu_t {top:150px; position:relative;}
+}
+@media screen and (max-width: 380px)
+{
+	.logo {width:120px; height: 127px;}
+	.to_przyszlosc {font-size: 8px; margin-top: 140px;}
+	.wybor_menu {font-size:13px;}
+	#menu_s {top:-160px;}
+	#menu_c {top:-90px;}
+	#menu_g {top:-20px;}
+	#menu_k {top:50px; }
+	#menu_t {top:120px; }
+}

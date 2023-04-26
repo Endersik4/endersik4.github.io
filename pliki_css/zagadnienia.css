@@ -1,0 +1,54 @@
+.zagadnienia_div
+{
+	position: absolute;
+	width: 80%;
+	top:240px;
+	text-align: center;
+	left:10%;
+}
+.naglowek
+{
+	color: white;
+	font-size: 2vw;
+	letter-spacing: 3px;
+	margin-bottom:-15px;
+}
+.zagadnienia_p
+{
+	font-size: 1.8vw;
+	letter-spacing: 2px;
+	color: white;
+}
+table, tr, td
+{
+	border: 2px solid #ff7a7a;
+	background-color:#1f272b;
+	padding:10px;
+}
+table
+{
+	color: white;
+	font-size: 1.8vw;
+	font-weight:bold;
+	letter-spacing:2px;
+	margin-left:auto;
+	margin-right:auto;
+	border-collapse: collapse;
+	text-align:center;
+}
+.lista_div
+{
+	position:absolute;
+	width:50%;
+	left:25%;
+}
+.lista_punktowa
+{
+	text-align:left;
+	color:#ff7a7a;
+	font-size:1.8vw;
+	letter-spacing:2px;
+}
+li {margin-top:10px;}
+.zrodlo {text-decoration:none; color:#ff7a7a; font-weight:bold;}
+.zrodlo:hover{color:RGB(255, 102, 102);}

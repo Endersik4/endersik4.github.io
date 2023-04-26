@@ -1,0 +1,106 @@
+* 
+{
+	font-family: raleway, sans-serif; 
+	box-sizing: border-box;
+	text-decoration:none;
+}
+@font-face 
+{
+    font-family: 'raleway';
+    src: url('Raleway-Thin.ttf') format('truetype');
+}
+body 
+{
+	background-color: #151d21; 
+	overflow-x: hidden;
+}
+::-webkit-scrollbar
+{
+    width: 12px;             
+}
+::-webkit-scrollbar-track
+{
+    background-color: #1f272b;  
+    width: 50px;    
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: #ff7a7a;  
+	border-radius: 10px;       
+	border: 3px solid #1f272b;  
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: RGB(255, 102, 102); 
+  
+}
+div.niewidzialny_div
+{
+	height: 350vw;
+	border: 2px solid #151d21;
+}
+div.stopka
+{
+	color: white;
+	letter-spacing: 2px;
+	position: fixed;
+	left: 0;
+	font-size: 13px;
+	bottom: 0px;
+	height: 45px;
+	width: 100%;
+	background-color: #1f272b;
+	color: #ff7a7a;
+	text-align: center;
+	font-weight: bold;
+	
+}
+div.div_nag
+{
+	text-align:center;
+}
+h1.naglowek
+{
+	color:#ff7a7a;
+	font-size:3vw;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+div.zadania
+{
+	position: absolute;
+	width: 70%;
+	left: 15%;
+	color: white;
+	letter-spacing: 1.5px;
+	font-size: 1.1vw;
+	text-decoration: none;
+	
+}
+a 
+{
+	text-decoration:none; 
+	color:#ff7a7a; 
+	font-weight:bold;
+	b
+}
+a:hover
+{
+	color:RGB(255, 102, 102);
+}
+h2, h3
+{
+	color:#ff7a7a;
+	text-align:center;
+	letter-spacing: 0.3vw;
+}
+p
+{
+	text-indent: 3vw;
+}
+h3.ip
+{
+	color: white; 
+	font-size: 1vw;
+	letter-spacing: 0.25vw;
+	text-align:center;
+}

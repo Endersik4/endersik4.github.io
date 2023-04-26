@@ -1,0 +1,22 @@
+/*jest tu trochę zbyt dużo kodu ale nie miałem jak inaczej naprawić pewnego błędu który powodował że strona nie wyglądała za dobrze w mniejszych rozdzielczościach */
+@media screen and (max-width: 800px)
+{
+	.pod_modelem {font-size:15px;}
+	.grafika_p{font-size:15px;}
+	.pod_modelem {font-size:10px; border: 2px dashed #ff7a7a; letter-spacing:2px; padding: 5px 10px; border-top:none; width:80%;}
+	.modele{border: 2px dashed #ff7a7a; border-bottom:none; margin-top:50px; width:80%;}
+	h1.naglowek{font-size:22px;}
+	.wszystkie_modele {top:400px;}
+}
+@media screen and (max-width: 380px)
+{
+	.grafika_div{top: 150px;}
+}
+
+@media screen and (max-width: 300px)
+{
+	.pod_modelem {font-size:5px; border: 1px dashed #ff7a7a; letter-spacing:1px; padding: 2.5px 5px; border-top:none; width:80%;}
+	.modele{border: 1px dashed #ff7a7a; border-bottom:none; margin-top:25px; width:80%;}
+
+	h1.naglowek{font-size:14px;}
+}

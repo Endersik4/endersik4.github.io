@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1651578572 source:c:\users\adam\desktop\usuwanie\main.cpp
+	<iostream>
+	<fstream>
+
+1651579033 source:c:\users\adam\desktop\dokumentacja_html\programy\usuwaniezbednychrzeczy\main.cpp
+	<iostream>
+	<fstream>
+

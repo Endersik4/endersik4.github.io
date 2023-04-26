@@ -1,0 +1,9 @@
+@media screen and (max-width: 800px) 
+{
+		.social{width:15%;}
+}
+@media screen and (max-width: 490px) 
+{
+		.zdjecia_div{top:200px; left:0}
+		
+}

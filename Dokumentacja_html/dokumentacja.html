@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<meta charset="utf-8">
+		<title>Dokumentacja</title>
+		<meta name="author" content="Adam Bartela">
+		<meta name="generator" content="Notepad++">
+		<meta name="robots" content="all">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="doku.css" type="text/css" >
+	</head>
+	<body>
+
+		<header>
+			<div class="div_nag">
+				<h1 class="naglowek"> DOKUMENTACJA </h1>
+			</div>
+		</header>
+		
+		<main>
+			<section>
+				<div class="zadania">
+					<h2> Plan Działania </h2>
+						<p style="text-align:center">
+							<b>1. [ZROBIONE dzięki temu <a href="https://techexpert.tips/nginx/enable-https-nginx/"> poradnikowi</a>] </b> Zamiana z HTTP na HTTPS w nginx.
+								<br/>
+							<b>2.</b> <b>[ZROBIONE] </b>Stworzenie programu w C++ do wprowadzania komendy INSERT do tabelka_szablony.txt
+								<br/>
+							<b>3.</b> <b>[ZROBIONE] </b>Stworzenie bazy danych z danymi od tego programu w Maszynie-B i Maszynie-C
+								<br/>
+							<b>4.</b> <b>[ZROBIONE] </b>Możliwość połączenia się z nginx Maszyny-B i Maszyny-C
+								<br/>
+							<b>5.</b> <b>[ZROBIONE] </b> Stworzenie skryptu w Pythonie do łączenia dwóch baz danych
+								<br/>
+							<b>6.</b> <b>[ZROBIONE] </b>Stworzenie skryptu w Pythonie do sprawdzania plików <i>dicom</i> pod kątem daty
+								<br/>
+							<b>7.</b> <b>[ZROBIONE] </b>Dokończenie <i>tej</i> strony 
+								<br/>
+							<b>8.</b> <b>[ZROBIONE] </b>Zaktualizować tą stronę w NGINX na Maszynie-A.
+						</p>
+					<h2> Łączenie się z Pixel'em </h2>
+						<p> 
+							Pobrałem <a href="https://www.fortinet.com/support/product-downloads#ztna" target="_blank"> FortiClient </a>, po zainstalowaniu próbowałem się połączyć z wami poprzez VPN wpisując dane które od was dostałem, ale nie działało, więc spróbwałem najpierw zrobić PROXMOX, a więc pobrałem <a href="https://www.proxmox.com/en/downloads/item/proxmox-ve-7-1-iso-installer" target="_blank"> Proxmoxa </a> a następnie zainstalowałem to na maszynie wirtualnej.<br/> Jak już się zainstalowało to wpisywałem to co trzeba było <i>(IP - 10.71.28.10, BRAMA - 10.71.28.1, DNS - 10.71.16.2)</i>. Po tym jak skończyła się konfiguracja to odłączyłem ten plik .iso od wirtualnej maszyny i ją odpaliłem.
+							<br/> 
+							Następnie spróbowałem się znowu połaczyć przez <b>FortiClient</b> przez VPN do was i teraz zadziałało.
+							<br/> 
+							Wpisałem swój adres i port <i>(10.71.28.10:8006)</i> do wyszukiwarki w moim komputerze i w tym momencie połączyłem się z <b>Proxmox</b>.
+						</p>
+						<br/>
+					
+					<h2> Tworzenie 3 Maszyn Wirtualnych na <i>Proxmox</i> i instalowanie na nich Ubuntu Server 18.04, oraz tworzenie 3 użytkowników</h2>
+						<p>
+							Stworzyłem Maszynę wirtualną poprzez kliknięcie w prawym górnym rogu <i> Utwórz VM </i>, robiłem co tam trzeba było robić i jest opcja <i> Obraz Iso </i> i patrzę a tam nic nie ma to znalazłem opcje <i> Obrazy ISO </i> w <i> Storage (pr01) </i> i było tam prześlij więc przesłałem <i> Ubuntu-Gnome 18.04 </i>, i po tym zainstalowałem Maszynę Wirtualną o nazwię Maszyna-A. 
+							<br/>
+							Zrobiłem tak jeszcze 2 razy i je tez odpowiednio nazwałem. Następnie stworzyłem użytkowników na Maszynie-A komendą adduser <i>(Towarzysz1 - zaq123edcxsw, Towarzysz2 - zaq123edcxsw, Towarzysz3 - zaq123edcxsw)</i>.
+							<br/> 
+							Zrobiłem tak jeszcze 2 razy na tych dwóch maszynach.
+						</p>
+						<br/>
+						
+						<h2> Instalowanie na Maszynie-A <i>nginX</i> oraz instalowanie na Maszynie-B i Maszynie-C <i> PostgreSQL</i></h2>
+						<p> 
+							Zainstalowałem na Maszynie-A <i>nginX</i> komendą <i> apt install ngnix</i> a następnie stworzyłem folder <i>dokumentacja</i> a w nim przykładową stronę <i>(/var/www/dokumentacja)</i> a po tym musiałem stworzyć plik aby nginX "wzieło" moją stronę z danej lokalizacji i postawiło ją na kompie.
+							<br/> 
+							Ten plik jest na stronie <a href="https://ubuntu.com/tutorials/install-and-configure-nginx#4-setting-up-virtual-host"target="_blank"> Ubuntu </a>. Po tym sprawdziłem czy moja strona działa poprzez wpisanie w wyszukiwarce <i> localhost:81/</i> i zadziałała.
+							<br/> 
+							Przesłałem sobie na google drive <b>tą</b> stronę z plikami i w Ubuntu pobralem sobie tą strone (musiałem zainstalować unzip komendą <i> apt install unzip </i>) i ją podmieniłem (Kiedy to piszę nie jest skończona ale jak skończę ostatnie zadanie to ją zaaktualizuje).
+							<br/>
+							Zainstalowałem na Maszynie-B i Maszynie-C PostgreSQL śledząc <a href="https://phoenixnap.com/kb/how-to-install-postgresql-on-ubuntu" target="_blank">ten poradnik</a>. Na Maszynie-B odbyło się bezproblemu ale za to na Maszynie-C zrobiłem dokładnie tak samo jak na Maszynie-B ale było napisane że nie może zainstalować bo czegoś brakuje, to sprawdziłem czy gdzieś nie było błędu i nie było więc musiałem postawić maszynę na nową.
+							<br/>
+						</p>
+					
+					<h2> Komunikacja między Maszynami </h2>
+						<h3 class="ip"> Maszyna-A IP: 10.71.28.7 | Maszyna-B IP: 10.71.28.8 | Maszyna-C IP: 10.71.28.17 </h3>
+						<h3> 1 - Każdy użytkownik może się zalogować na każdą z maszyn poprzez <i> SSH</i>: </h3>
+						<p> 
+							Trzeba było zrobić tak że Maszyna-A ma mieć dostęp do Maszyny-B i C przez SSH, pomyślałem że żeby to zadziałało trzeba mieć połączenie serwer-klient między maszynami, więc probówalem to zrobić ale w PROXMOX nie dało się ustawić rodzaju kart sieciowej a musiałem jedną ustawić na Bridged a drugą na wewnętrzną.
+							<br/> 
+							Szukałem w internecie jak połączyć obie maszyny ale nic nie znalazłem więc pomyślałem "a dobra, spróbuje zainstalować ssh i się zobaczy" i śledziłem <a href="https://ubuntix.pl/jak-zdalnie-zarz-dza-serwerem-ubuntu-za-pomoc" target="_blank"> ten poradnik </a> czyli zainstalowałem SSH komendą <i> apt-get install openssh-server </i> następnie zedytowałem plik konfiguracyjny SSH (bez dodawania MaxAuthTries 4) i sprawdziłem czy usługa działa na Maszynie-A - zadziałała.
+							<br/> 
+							Maszyny-B połączyłem się zdalnie do Maszyny-A jako uzytkownik <i>Towarzysz1</i> komendą <b> ssh Towarzysz1@10.71.28.7 </b> i zadziałało bez problemu.
+							<br/> 
+							Spróbowałem stworzyć folder <i> (mkdir cos) </i> żeby sprawdzić czy na pewno mam połączenie zdalne z Maszyna-A ale nie mogłem stworzyć tego folderu ponieważ Towarzysz1 nie ma uprawnień więc spróbowałem z komendą <i><b>sudo</b> mkdir cos</i> i dalej nie działało, więc zalogowałem się z Towarzysz1 na Adam (ponieważ to konto jest Adminem) komendą <i> su Adam </i> i wtedy spróbowałem stworzyć folder i dalej nie chciało stworzyć więc dodałem <i> sudo do mkdir </i> i już wtedy zadziałało.
+							<br/> 
+							Od tego momentu mogłem mogłem konfigurować Maszyna-A jak chciałem z Maszyny-B. Zainstalowałem jeszcze SSH na Maszyna-B i Maszyna-C żeby inne Maszyny mogły się do nich podłączyć i po tym z jakiejś maszyny miałem dostęp do każdej maszyny np. (A-C, B-C, B-A).
+						</p>
+						<br/>
+						
+						<h3> 2 - Maszyna-A może podłączyć się do Baz danych z Maszyny-B i -C oraz dodawanie zawartości do Baz Danych: </h3>
+						<p> 
+							W Drugim podpunkcie trzeba było zrobic tak żeby z Maszyny-A można by było się podłączyć do bazy danych w Maszynie-B i -C, a żeby się podłączyć trzeba mieć do czego.
+							<br/> 
+							Na początku stworzyłem nowego użytkownika w <i> Postgres </i> o nazwie <b> adam </b> tak żeby nazwa pasowała do jednego z użytkowników, następnie stworzyłem nową bazę danych o nazwie takiej samej jak użytkownik postgres (adam). Wyszedłem z postgresu, zalogowałem się na konto <i> adam </i> i po tym wpisałem <i> psql </i> i podłączyłem się do nowo stworzonej bazy danych. 
+							<br/> 
+							Stworzyłem nową tabele o nazwie <i> public.szablon_opisu </i> taką jaką trzeba było stworzyć z pliku <a href="pliki/tabele_opis_kol.txt" target="_blank"> tabele_opis_kol.txt </a>, dodałem odpowiednie kolumny (nazwa, typ danych) i pierwsza tabela skończona. 
+							<br/> 
+							Problem był taki że była pusta, więc wysłałem <a href="pliki/tabelka_szablony.txt" target="_blank"> ten plik </a> (bez początkowych linijek) do google drive i pobrałem go sobie do Maszyny-B. Żeby skopiować z pliku.txt do tej tabelki trzeba podać <b> DELIMITER </b> a więc ustawiłem go jako przecinek czyli komenda wyglądała tak: <i> \COPY szablon_opisu FROM 'home/adam/Pobrane/tabelka_szablony.txt' DELIMITER ',' </i> no i był problem. 
+							<br/>
+							Wywalał błąd że za dużo danych, to szukałem różnych rozwiązań ale nic nie działalo więc zrobiłem nową tabelkę z lekarzami bo pomyślałem że może zły plik .txt dostałem, wpisałem odpowiednie kolumny i typy danych i zatwierdziłem.
+							<br/>
+							Zrobiłem tak jak u <i> szablon_opisu </i> z zawrtością w tabeli lekarze, no i znowu wywaliło błąd.
+							<br/>
+							Okazało się że dane do kolumny bierze też znaki typu nawias czy cudzysłów i np. gdy trzeba było ustawić limit <i> lkz_nr_prawa_wyk_zawodu </i> na 7 liczb a liczby które tam trzeba było wpisać to np. 2525237 to w tym przypadku już jest limit i by było wszystko git ale kopiowało mi także cudzysłowia i zamiast wpisania do tej kolumny <i>2525237 </i>to wpisywało <i> "2525237 </i> i wywalało błąd ponieważ za dużo znaków. 
+							<br/>
+							Pomyślałem sobie że może stworzę program który usunie mi te nie potrzebne rzeczy (cudzysłów, średnik, nawiasy) ale wolałem przed tym się zapytać osoby od praktyk czy dostaliśmy dobre pliki, tak poczekałem do następnego dnia i nie dostałem odpowiedzi (co nie dziwne bo majówka była) więc stworzyłem ten <a href="programy/UsuwanieZbednychRzeczy/main.cpp" target="_blank"> program do usuwania tych rzeczy </a> w C++. 
+							<br/>
+							Z Lekarzami to dobrze zadziałało, normalnie wpisało mi wszystko do tej tabeli ale już z szablonem_opisu nie zadziałało ponieważ było tam za dużo wymaganych kolumn, np. w pliku <a href="pliki/tabele_opis_kol.txt" target="_blank"> tabele_opis_kol.txt </a> było wpisane że tabela szablon_opisu ma mieć 11 kolumn gdzie w pliku z tymi danymi do szablon_opisu były dane na 14 kolumn. 
+							<br/>
+							Tutaj już nie mam co zrobić więc czekam na odpowiedź czy te plik które mam są prawidłowe, ale mając już jedną tabele z zawartością sprawdziłem <b>czy mam połączenie z Maszyny-A do bazy danych z Maszyny-B i dzięki SSH bezproblemowo połączyłem się do tej bazy danych lekarzy</b>. 
+							<br/>
+							Stworzyłem te dwie tabelki jeszcze na Maszynie-C i dodałem zawartość do tabelki <i> lekarz </i> zawartość z <a href="pliki/poprawiona_tabelka_lekarzy.txt" target="_blank"> tego pliku </a> i <b>sprawdziłem czy Maszyna-A może się podłączyć z bazą danych od Maszyny-C - może.</b>
+							<br/>
+							Używałem <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04" target="_blank"> tego poradnika </a> do tych tabel.
+							<br/><br/>
+							Okazało się że w zły sposób myślałem jeżeli chodzi o kopiowanie danych z .txt do baz danych. Ja chciałem to zrobić komendą COPY czyli wszystko na raz ale zauważyłem że komenda INSERT która wprowadza pojedyncze dane do baz danych, na końcu tej komendy wygląda tak samo jak linijki z <a href="pliki/tabelka_szablony.txt" target="_blank"> tego pliku </a>. 
+							<br/>
+							Przykładowa komenda INSERT wygląda tak: <i> INSERT INTO nazwa_bazy_danych VALUES <b>('slide', 'blue', 'south', '2017-04-28');</b></i> więc żeby rozwiązać mój problem musiałem dodać po prostu <i> INSERT INTO szablon_opisu VALUES </i> do każdej linijki z <a href="pliki/tabelka_szablony.txt" target="_blank"> tego pliku </a>. 
+							<br/>
+							Więc stworzyłem <a href="programy/DodawanieINSERT/main.cpp" target="_blank">program w C++</a> który to dodaje (trzeba do pierwszej linijki dodać ręcznie i usunąć na końcu tą komendę).
+							<br/>
+							Teraz gdy to już mam to stworzyłem <a href="programy/WpisywanieKomendDoTerminala/main.txt" target="_blank">program w Pythonie </a>który z pętli <i>while </i> wpisuje po kolei dane do bazy danych.
+							<br/>
+							Po 2 godzinnych próbach aby python działał z postgresem a później jeszcze żeby pobierał te linijki z pliku i je wpisywał do postgresa w końcu mam 3 bazy danych z danymi na Maszynie-B i Maszynie-C.
+							<br/>
+							A więc na początku stworzyłem inny program niz jest podany wyżej, ponieważ myślałem że taki zadziała. Po prostu dodałem <i> import os | os.system(line) </i> gdzie <i>line </i> to kolejne linie z tego pliku .txt przygotowanego przeze mnie. Dodałem tam jeszcze komendę <i> os.system('psql') </i> myśląc że to zadziała ale nie działało. 
+							<br/>
+							Poczytałem i okazało się że to są kompletnie inne komendy aby Python działał w postgres i jeszcze trzeba coś zainstalować - <i>pip3 install psycopg2-binary</i> ale oczywiście mi to nie chciało się zainstalować ale znalazłem w <a href="https://www.codevoila.com/post/2/python3-connect-postgresql-with-psycopg2-on-ubuntu" target="_blank"> tym poradniku </a> że żeby zainstalować to co wyżej to potrzebuje jeszcze zainstalować <i> apt-get install libpq-dev </i> pakiet oraz <i> apt install python3-pip </i> i po tym już normalnie mogłem zainstalować to co chciałem. 
+							<br/>
+							Po zainstalowaniu podążałem za <a href="https://linuxhint.com/postgresql_python/" target="_blank"> tym poradnikiem </a> i zrobiłem przykładowy skrypt aby sprawdzić czy działa - wszystko ładnie działało.
+							<br/>
+							Musiałem stworzyć ponownie <a href="programy/WpisywanieKomendDoTerminala/main.txt" target="_blank"> ten skrypt </a> już dostosowany do Postgres'a, było mnóstwo problemów które ostatecznie udało mi się rozwiązać i po męczeniu się z tym z 2h miałem już przygotowane bazy danych do następnych skryptów.
+							<br/>
+							<br/>
+							<b>Podpunkt </b>ten był o tym aby Maszyna-A miała połączenie z Bazą Danych na Maszynie-B i -C więc na Maszynie-A zalogowałem się na konto <i> adam </i> na Maszynie-B poprzez SSH komendą <i> ssh adam@10.71.28.8 </i>. Następnie wpisałem komendę <i> psql </i> aby zalogować się do Postgres'u a po tym wpisałem <b> SELECT * FROM szablon_opisu LIMIT 3 </b> żeby sprawdzić czy mam dostęp do tej bazy danych, ten limit na końcu to wpisałem ponieważ nie jesteś w stanie nic zobaczyć w tej bazie poprzez Terminal ponieważ jest zbyt duża a ten limit to naprawia (pokazuje tylko 3 pierwsze dane).
+						</p>
+						<br/>
+						
+						<h3> 3 - Maszyna-B i -C mogą się podłączyć do interfejsu Nginx z Maszyny-A: </h3>
+						<p> 
+							Z Maszyny-C i Maszyny-C oraz wszystkich innych widać stronę która jest hostowana na Maszynie-A przez Nginx wchodząc w <a href="https://10.71.28.7" target="_blank">ten adres </a>.
+						</p>
+						<br/>
+						
+					<h2> Tworzenie Skryptów - Przenoszenie Baz danych (szablonu_opisu) z jednego Lekarza do drugiego</h2>
+					<p>
+						Najpierw przez kilkanaście minutów próbowałem odszyfrować to jaki skrypt mam zrobić no ale udało mi się zrozumieć. 
+						<br/>
+						Baza danych <a href="pliki/tabelka_lekarze.txt" target="_blank"> lekarz </a> i <a href="pliki/tabelka_lekarze1.txt" target="_blank"> lekarz1 </a> ma na początku swoje ID np. <i>"ff808081598334f60159839d1e3a0002" </i> i takie same id które są w tych bazach danych (lekarz,lekarz1) są w <a href="pliki/tabelka_szablony.txt" target="_blank"> szablony_opisu </a> i dzięki temu jestem w stanie sprawdzić który lekarz do czego jest przypisany.
+						<br/>
+						Dany Lekarz ma ustawione jakieś konkretne ID które jest w <i>szablony_opisu </i> i te ID lekarza ma podpisane jakieś konkretne rzeczy np. gabinet,opis,skrót itd.
+						<br/>
+						Muszę stworzyć skrypt który połączy się z dwoma bazami danych i który będzie potrafił przenieść informacje (z szablony_opisu) które należą do <i> jednego lekarza </i> z bazy <i> tabelki_lekarz </i> i je przenieść do innego lekarza z bazy danych <i> tabelki_lekarz1 </i>. 
+						<br/>
+						Na przykład: Mam lekarza z <i> tabelki_lekarz </i> o imieniu <i> TheDoctor </i> i on ma w <i>szablony_opisu </i> swój gabinet o ID np. Gabinet1 i teraz mam zrobić tak żeby drugi lekarz z <i> tabelki_lekarz1 </i> o imieniu <i>Piotr</i> dostał te informacje które są przypisane do TheDoctor z szablony_opis czyli jak Piotr miał gabinet np. Gabinet2 to po skrypcie powinien mieć Gabinet1. 
+						<br/>
+						Ten skrypt ma być zrobiony tak aby można bez problemu wpisać z JAKIEGO lekarza <i> skopiować </i> do którego skopiwać dane o Gabinecie np. <i>program.py TheDoctor Piotr;</i> i ma być też opcja <i> all</i> który skopiuje Gabinet z jednego lekarza do WSZYSTKICH np. <i> program.py Piotr all; </i>
+						<br/>
+						<br/>
+						Na początku sprawdzałem małe rzeczy jak działają i tak krok po kroku udało mi się zrobic <a href="programy/kopiowanie_opisow.txt" target="_blank"> program </a>który robi to co trzeba tylko że na bazach danych na jednej maszynie (B). Bardzo dużo tutaj było testowania i przez to zajeło mi około 6h tworzenie tego skryptu (tak na oko).
+						<br/>
+						Teraz spróbowałem zrobić tak aby mieć połączenie przez SSH przez python'a i znalazłem <a href="https://zoomadmin.com/HowToInstall/UbuntuPackage/python3-paramiko" target="_blank"> poradnik </a> który pokazuje jak można pobrać <i> paramiko </i> (Moduł który jest potrzebny do połączenia SSH w python'ie).
+						<br/>
+						Następnie znalazłem <a href="https://www.adamsmith.haus/python/answers/how-to-ssh-into-a-server-in-python"> taki poradnik </a> który pokazał jak połączyć się z SSH poprzez komendy a później jak coś zrobić np. <i> ssh.exec_command('mkdir cos') </i> teraz z Maszyny-A stworzyłem folder <i> cos </i> na Maszynie-B poprzez skrypt.
+						<br/>
+						Jednak to co napisałem wyżej nie zadziałało tak jak chciałem i żeby połączyć się przez <i>SSH </i> z <i>PostgreSQL</i> trzeba to kompletnie inaczej zrobić i znowu 4h szukania rozwiązania, próbowania, zastanawiania się dlaczego to nie działa ale ostatecznie udało mi się połączyć z bazą danych z Maszyny-A na Maszynie-B (lekarz) i Maszynie-C (lekarz1).
+						<br/>
+						Użyłem <a href="https://www.youtube.com/watch?v=u53saamyOWo" target="_blank"> tego poradnika </a> oraz <a href="https://hassanannajjar.medium.com/how-to-fix-error-password-authentication-failed-for-the-user-in-postgresql-896e1fd880dc" target="_blank"> tego </a>. A kod testowy wyglądał <a href="programy/testowanie_polaczenia_baz_danych.txt" target="_blank"> tak </a>.
+						<br/>
+						Teraz musiałem tylko "połączyć" <a href="programy/testowanie_polaczenia_baz_danych.txt" target="_blank"> to </a> z <a href="programy/kopiowanie_opisow.txt" target="_blank"> tym </a> i <b>ostateczny program </b>który trzeba było zrobić wszedł <a href="programy/kopiowanie_opisow_final.txt" target="_blank"> taki </a>
+						<br/>
+					</p>
+					
+					<h2> Tworzenie Skryptów - Sprawdzanie plików dicom pod względem daty/godziny wykonania a następnie żeby je odkładał w odpowiednie miejsce w serwerze pacs</h2>
+					<p>
+						Myślałem nad tym jako to zrobić, i nie miałem pojęcia od czego tu w ogole zacząć. Patrzyłem co dostałem na discordze o tym co w dokumencie WORD ale dalej mimo wszystko nie mialem pojęcia co tu zrobić. 
+						<br/>
+						Więc pomyślałem że cokolowiek musze robić i może coś wyjdzie a w poleceniu było coś o Serwerze <i>PACS </i> więc sprawdziłem jak można stworzyć taki serwer PACS i w necie znalazłem tylko dwa poradniki z czego jeden był o jakimś produkcie który kupujesz a drugi pokazał jak stworzyć serwer <i> PACS </i> który nazywał się <i> Orthanc </i> więc go stworzyłem, wysłałem pliki DICOM do tego serwera i patrze jak to wygląda.
+						<br/>
+						W poleceniu było że je musze posortować więc szukałem w tym <i> Orthanc </i> tych plików DICOM i czy jakoś je można posortować no i nie dało się, tam prawie nic nie było więc ten serwer PACS odpuściłem bo po prostu nic nie było o tym w necie.
+						<br/>
+						Czytam znowu to polecenie i udało mi się zrozumieć że po prostu Skyrpt musi wypakować te pliki .tar następnie sprawdzić kiedy zostały stworzone/zmodyfikowane i je dać do ODPOWIEDNICH folderów. 
+						<br/>
+						W poleceniu było o drzewie katalogów w serwerze PACS i to mnie ciągle myliło ale że postanowiłem zignorować ten serwer PACS to nagle oświeciło. 
+						<br/>
+						Mój plan na ten skrypt jest taki:
+						<ul>
+							<li> Użytkownik podaje katalog w którym są te pliki .tar </li>
+							<li> Użytkownik podaje katalog do którego umieścić wypakowane pliki dicom </li>
+							<li> Sprawdza pierwszy plik dicom pod kątem daty stworzenia/zmodyfikowania </li>
+							<li> Sprawdza date stworzenia i tworzy odpowiednie foldery i podfoldery do danej daty np. (04.05.2022) to stworzy folder <i> 2022 </i> i podfolder <i> Maj </i> i kolejny podfolder <i> 04 </i> chyba że już zostały stworzone to wtedy porgram to zignoruje i po prostu przeniesie dany plik </li>
+						</ul>
+						<br/>
+						Jak zdąże to dodam jeszcze Tablicę w psql którą trzeba zrobić ale która ma być tylko "tablicą pomocną".
+						<br/>
+						Zrobiłem ten skrypt <a href="programy/pliki_dicom.txt" target="_blank"> pliki dicom</a>, żeby zadziałał trzeba mu podać bezbłędne dane oraz rozpakowane pliki dicom (pliki/tary_to_delete) ale nie zdążyłem dodać reszty rzeczy do tego skryptu które były napisane na discordzie.
+						<br/>
+					</p>
+					<h1 class="naglowek" style="text-align:center;"> Udało mi się zrobić wszystko co było napisane <a href="pliki/Plan_praktyk_v.001.odt" style="color:white;"> w WORDzie </a>, za długo mi to zajeło, i mogłem to szybciej zrobić ale problemy, różne wydarzenia to trochę wydłużyły.
+						<br/>
+						Adam Bartela, 20.05.2022
+					</h1>
+				</div>
+				<div class="niewidzialny_div">
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="stopka">
+				<p> Adam Bartela </p>
+			</div>
+		</footer>
+
+	</body>
+</html>

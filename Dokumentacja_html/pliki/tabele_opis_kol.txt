@@ -1,0 +1,40 @@
+                Table "public.szablon_opisu"
+        Column         |          Type          | Modifiers 
+-----------------------+------------------------+-----------
+ sou_id                | character varying(36)  | not null
+ h_version_sou         | integer                | 
+ sou_gabinet           | character varying(255) | 
+ sou_rodzaj            | character varying(255) | 
+ sou_skrot             | character varying(255) | 
+ sou_tresc_opisu       | text                   | 
+ sou_tresc_rozpoznania | character varying(255) | 
+ sou_lkz_id            | character varying(36)  | 
+ sou_prywatny          | character varying(255) | 
+ sou_ulubiony          | boolean                | 
+ sou_tagi              | character varying(255) | 
+Indexes:
+    "szablon_opisu_pkey" PRIMARY KEY, btree (sou_id)
+Foreign-key constraints:
+    "fkb925994eec6e47d" FOREIGN KEY (sou_lkz_id) REFERENCES lekarz(lkz_id)
+
+    
+    
+                    Table "public.lekarz"
+         Column          |          Type          | Modifiers 
+-------------------------+------------------------+-----------
+ lkz_id                  | character varying(36)  | not null
+ h_version_lkz           | integer                | 
+ lkz_imiona              | character varying(255) | 
+ lkz_nazwisko            | character varying(255) | 
+ lkz_nr_prawa_wyk_zawodu | character varying(7)   | 
+ lkz_przepisywacz        | boolean                | 
+ lkz_tytul               | character varying(255) | 
+ lkz_uid_uzytkownika     | character varying(36)  | not null
+ lkz_radibox_login       | character varying(255) | 
+Indexes:
+    "lekarz_pkey" PRIMARY KEY, btree (lkz_id)
+    "lekarz_lkz_uid_uzytkownika_key" UNIQUE CONSTRAINT, btree (lkz_uid_uzytkownika)
+    "idx_lkz_nr_prawa_wyk_zawodu" btree (lkz_nr_prawa_wyk_zawodu)
+    "idx_lkz_uid_uzytkownika" btree (lkz_uid_uzytkownika)
+Referenced by:
+    TABLE "szablon_opisu" CONSTRAINT "fkb925994eec6e47d" FOREIGN KEY (sou_lkz_id) REFERENCES lekarz(lkz_id)

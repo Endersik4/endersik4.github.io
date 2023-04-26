@@ -1,0 +1,20 @@
+@media screen and (max-width: 800px)
+{
+	.wszystkie_filmiki{top:100px;}
+	.niewidzialny_div{height:130px;}
+	.naglowek_div{margin-left:-10px;}
+	
+	.pod_filmem {font-size:10px; border: 2px dashed #ff7a7a; letter-spacing:2px; padding: 5px 10px; border-top:none; width:80%;}
+	.film{border: 2px dashed #ff7a7a; border-bottom:none; margin-top:50px; width:80%;}
+	h1.naglowek{font-size:22px;}
+}
+@media screen and (max-width: 380px)	
+{	
+	.wszystkie_filmiki{top:50px;}
+	.naglowek_div{top:200px;}
+	.niewidzialny_div{height:80px;}
+	
+	.pod_filmem {font-size:5px; border: 1px dashed #ff7a7a; letter-spacing:1px; padding: 2.5px 5px; border-top:none; width:80%;}
+	.film{border: 1px dashed #ff7a7a; border-bottom:none; margin-top:25px; width:80%;}
+}
+

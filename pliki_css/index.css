@@ -1,0 +1,25 @@
+.powitanie_div
+{
+	position: absolute;
+	width: 80%;
+	left: 10%;
+	top: 250px;
+	text-align: center;
+	height:600px;
+	border: 2px solid #151d21;
+}
+.powitanie
+{
+	color: white;
+	font-size: 40px;
+	letter-spacing: 3px;
+	margin-bottom:-15px;
+}
+.powitanie_p
+{
+	font-size: 2vw;
+	letter-spacing: 3px;
+	color: white;
+}
+.zrodlo {text-decoration:none; color:#ff7a7a; font-weight:bold;}
+.zrodlo:hover{color:RGB(255, 102, 102);}

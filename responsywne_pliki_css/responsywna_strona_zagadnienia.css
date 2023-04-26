@@ -1,0 +1,18 @@
+@media screen and (max-width: 840px)
+{
+	.naglowek{margin-bottom:10px; letter-spacing:2px; font-size:18px;}
+	.zagadnienia_p, table, .lista_punktowa{letter-spacing:1px;}
+	.zagadnienia_p, .lista_punktowa{font-size:14px;}
+	table{font-size:12px;}
+	.lista_div{width:70%; left:15%;}
+	table, tr, td{border: 1px solid #ff7a7a;}
+}
+@media screen and (max-width: 464px)  		{.lista_div{width:80%; left:10%;}}
+@media screen and (max-width: 397px)  
+{	
+	.zagadnienia_p, .lista_punktowa{font-size:12px;}
+	table{font-size:10px;} 
+	.naglowek{font-size:15px;}
+}
+
+

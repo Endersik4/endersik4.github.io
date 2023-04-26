@@ -1,0 +1,55 @@
+.grafika_div
+{
+	position: absolute;
+	width: 80%;
+	top:240px;
+	text-align: center;
+	left:10%;
+	padding: 20px 20px;
+}
+h1.naglowek
+{
+	font-size:3vw;
+	letter-spacing:2px;
+	font-weight:bold;
+	color:white;
+}
+.grafika_p
+{
+	font-size: 30px;
+	letter-spacing: 2px;
+	color: white;
+}
+.wszystkie_modele
+{
+	width: 100%; 
+	position:relative; 
+	top:800px; 
+	border:1px solid #151d21;
+	display:block;
+}
+.modele
+{
+	border: 3px dashed #ff7a7a;
+	border-bottom: none;
+	width: 70%;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	margin-top:7vw;
+}
+.pod_modelem 
+{
+  text-align: center;
+  padding: 10px 20px;
+  font-size:20px;
+  color: #ff7a7a;
+  font-weight: bold;
+  letter-spacing:4px;
+  border: 3px dashed #ff7a7a;
+  border-top:none;
+  width:70%;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: #1f272b;
+}

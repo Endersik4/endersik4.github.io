@@ -1,0 +1,55 @@
+@media screen and (max-width: 1720px)
+{	
+	.filmik_div{top:1400px;}
+	.niewidzialny_div{height:1600px;}
+}
+@media screen and (max-width: 1350px)
+{
+	.c_p{font-size:25px;}
+	.naglowek_div{top:-150px;}
+}
+@media screen and (max-width: 970px)
+{
+	.c_p{font-size:20px;}
+	.naglowek_div{top:-120px;}
+	.filmik_div{top:1200px;}
+}
+@media screen and (max-width: 800px)
+{
+	.filmik_div{top:1250px;}
+	.naglowek_div{top:-80px;}
+	.niewidzialny_div{height:1400px;}
+}
+@media screen and (max-width: 610px)
+{
+	.filmik_div{top:1400px;}
+	.niewidzialny_div{height:1500px;}
+}
+@media screen and (max-width: 530px)
+{
+	.c_p{font-size:15px;}
+	.filmik_div{top:950px;}
+	.niewidzialny_div{height:1050px;}
+	.naglowek_div{top:-50px;}
+}
+@media screen and (max-width: 460px)
+{
+	.filmik_div{top:1150px;}
+	.niewidzialny_div{height:1250px;}
+}
+@media screen and (max-width: 390px)
+{
+	.c_p{font-size:13px;}
+	.filmik_div{top:1050px;}
+	.niewidzialny_div{height:1150px;}
+}
+@media screen and (max-width: 330px)
+{
+	.filmik_div{top:1150px;}
+	.niewidzialny_div{height:1250px;}
+}
+@media screen and (max-width: 300px)
+{
+	.niewidzialny_div{height:1350px;}
+	.filmik_div{top:1250px;}
+}
